@@ -1,0 +1,44 @@
+<div id="wrapper">
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <h2>Librerias Eclipse</h2>
+    </div>
+    <ul class="sidebar-nav">
+      <li>
+        <a href="*"><i class="fa fa-home"></i>Inicio</a>
+      </li>
+      <li>
+        <a href="/listado"><i class="fa fa-list"></i>Listado</a>
+      </li>
+      <li>
+        <a href="/proveedores"><i class="fa fa-list"></i>Proveedores</a>
+      </li>
+    </ul>
+  </aside>
+
+<div class="container-registrar">
+    <form class="row g-3" [formGroup]="libroForm" (ngSubmit)="registrarLibros()">
+        <div class="col-md-6">
+          <label for="inputName" class="form-label">Nombre</label>
+          <input type="text" class="form-control" formControlName="nombre">
+        </div>
+        <div class="col-md-6">
+            <label for="inputDes" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" formControlName="descripcion">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPre" class="form-label">Precio</label>
+            <input type="number" class="form-control" formControlName="precio">
+          </div>
+        <div class="col-md-4">
+            <label for="inputState" class="form-label">Proveedor</label>
+            <select formControlName="codProv" class="form-select">
+              <option selected *ngFor="let proveedor of proveedores" [value]="proveedor.codProv">{{ proveedor.nomProv }}</option>
+            </select>
+          </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+      </form>
+</div>
+</div>
