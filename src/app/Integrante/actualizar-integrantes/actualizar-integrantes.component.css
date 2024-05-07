@@ -1,6 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+
 body{
     background-size: cover;
-    opacity: initial;
   }
     
   .container {
@@ -22,17 +23,15 @@ body{
       position: relative;
       min-height: 100%;
     }
-
-    .titulo {
-      display: flex;
-      margin-left: 15px;
-      padding-top: 15px;
-      justify-content: center;
-    }
-
-    table{
-      opacity: 0.9;
-    }
     
+    .container-Actualizar{
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin-left: 15px;
+        margin-top: 15px;
+        opacity: 0.9;
+      }
   html, body { height: 100%; }
   body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  

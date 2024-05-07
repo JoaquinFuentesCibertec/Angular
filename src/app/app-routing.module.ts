@@ -7,6 +7,9 @@ import { ListarProveedoresComponent } from './Proveedor/listar-proveedores/lista
 import { RegistrarProveedoresComponent } from './Proveedor/registrar-proveedores/registrar-proveedores.component';
 import { ActualizarLibroComponent } from './Libro/actualizar-libro/actualizar-libro.component';
 import { ActualizarProveedorComponent } from './Proveedor/actualizar-proveedor/actualizar-proveedor.component';
+import { ListarIntegrantesComponent } from './Integrante/listar-integrantes/listar-integrantes.component';
+import { RegistrarIntegrantesComponent } from './Integrante/registrar-integrantes/registrar-integrantes.component';
+import { ActualizarIntegrantesComponent } from './Integrante/actualizar-integrantes/actualizar-integrantes.component';
 
 const routes: Routes = [
   {path: '',component: InicioComponent},
@@ -16,6 +19,9 @@ const routes: Routes = [
   {path: 'nuevoProv', component: RegistrarProveedoresComponent},
   {path: 'actuLibro/:libro',component: ActualizarLibroComponent},
   {path: 'actuProv/:proveedor', component: ActualizarProveedorComponent},
+  {path: 'integrantes', component: ListarIntegrantesComponent},
+  {path: 'nuevoInt', component: RegistrarIntegrantesComponent},
+  {path: 'actuInt/:integrante', component: ActualizarIntegrantesComponent},
   {path:'**', redirectTo:'',pathMatch:'full'},
 ];
 

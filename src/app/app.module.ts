@@ -14,6 +14,9 @@ import { ActualizarLibroComponent } from './Libro/actualizar-libro/actualizar-li
 import { ActualizarProveedorComponent } from './Proveedor/actualizar-proveedor/actualizar-proveedor.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ListarIntegrantesComponent } from './Integrante/listar-integrantes/listar-integrantes.component';
+import { RegistrarIntegrantesComponent } from './Integrante/registrar-integrantes/registrar-integrantes.component';
+import { ActualizarIntegrantesComponent } from './Integrante/actualizar-integrantes/actualizar-integrantes.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ListarProveedoresComponent,
     RegistrarProveedoresComponent,
     ActualizarLibroComponent,
-    ActualizarProveedorComponent
+    ActualizarProveedorComponent,
+    ListarIntegrantesComponent,
+    RegistrarIntegrantesComponent,
+    ActualizarIntegrantesComponent
   ],
   imports: [
     BrowserModule,

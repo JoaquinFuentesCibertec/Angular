@@ -1,317 +1,307 @@
 /* You can add global styles to this file, and also import other style files */
 
-body{
-  background-size: cover;
+
+body {
+  position: relative;
+  background-color: rgba(173, 216, 230, 0.5);
 }
+
+
+.imgb{ 
+  position: fixed;
+  top: 12%;
+  left: 39%;
+  z-index: -1;
+  width: 550px;
+  height: 550px;
+  background-image: url(assets/img/8995106.png);
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.3;
+}
+
+
+
 
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.5) !important;
-    border-color: transparent !important;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border-color: transparent !important;
 }
 
 .navbar-toggler-icon {
-    background-color: #000;
+  background-color: #000;
 }
 
 .navbar-nav .nav-link {
-    color: #000 !important;
+  color: #000 !important;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #333 !important;
+  color: #333 !important;
 }
 
 .card-container {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-  }
-  
-  .container {
-    display: flex;
-    margin-left: 15px;
-    padding-top: 15px;
-    justify-content: center;
-    margin-bottom: 15px;
-  }
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
 
-  .container-left {
-    float: left;
-    margin-right: 20px;
-  }
+.container {
+  display: flex;
+  margin-left: 15px;
+  padding-top: 15px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.container-left {
+  float: left;
+  margin-right: 20px;
+}
 
 
-  body {
-    padding-bottom: 30px;
-    position: relative;
-    min-height: 100%;
-  }
-  
-  a {
-    transition: background 0.2s, color 0.2s;
-  }
-  a:hover,
-  a:focus {
-    text-decoration: none;
-  }
-  
+body {
+  padding-bottom: 30px;
+  position: relative;
+  min-height: 100%;
+}
+
+a {
+  transition: background 0.2s, color 0.2s;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+#wrapper {
+  padding-left: 0;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #222;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px;
+}
+
+.sidebar-brand {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  text-align: center;
+  padding: 20px 0;
+}
+.sidebar-brand h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 24px;
+  color: skyblue;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 75px;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sidebar-nav > li {
+  text-indent: 10px;
+  line-height: 42px;
+}
+.sidebar-nav > li a {
+  display: block;
+  text-decoration: none;
+  color: #757575;
+  font-weight: 600;
+  font-size: 18px;
+}
+.sidebar-nav > li > a:hover,
+.sidebar-nav > li.active > a {
+  text-decoration: none;
+  color: #fff;
+  background: #F8BE12;
+}
+.sidebar-nav > li > a i.fa {
+  font-size: 24px;
+  width: 60px;
+}
+
+#navbar-wrapper {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+}
+#wrapper.toggled #navbar-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+#navbar-wrapper .navbar {
+  border-width: 0 0 0 0;
+  background-color: #eee;
+  font-size: 24px;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+#navbar-wrapper .navbar a {
+  color: #757575;
+}
+#navbar-wrapper .navbar a:hover {
+  color: white;
+}
+
+#content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+  top: 100px;
+}
+#wrapper.toggled #content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+@media (min-width: 992px) {
   #wrapper {
-    padding-left: 0;
-    transition: all 0.5s ease;
-    position: relative;
+    padding-left: 250px;
   }
   
+  #wrapper.toggled {
+    padding-left: 60px;
+  }
+
   #sidebar-wrapper {
-    z-index: 1000;
-    position: fixed;
-    left: 250px;
-    width: 0;
-    height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    background: #222;
-    transition: all 0.5s ease;
+    width: 250px;
   }
   
   #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
-  }
-  
-  .sidebar-brand {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    text-align: center;
-    padding: 20px 0;
-  }
-  .sidebar-brand h2 {
-    margin: 0;
-    font-weight: 600;
-    font-size: 24px;
-    color: #fff;
-  }
-  
-  .sidebar-nav {
-    position: absolute;
-    top: 75px;
-    width: 250px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .sidebar-nav > li {
-    text-indent: 10px;
-    line-height: 42px;
-  }
-  .sidebar-nav > li a {
-    display: block;
-    text-decoration: none;
-    color: #757575;
-    font-weight: 600;
-    font-size: 18px;
-  }
-  .sidebar-nav > li > a:hover,
-  .sidebar-nav > li.active > a {
-    text-decoration: none;
-    color: #fff;
-    background: #F8BE12;
-  }
-  .sidebar-nav > li > a i.fa {
-    font-size: 24px;
     width: 60px;
   }
   
-  #navbar-wrapper {
-      width: 100%;
-      position: absolute;
-      z-index: 2;
-  }
   #wrapper.toggled #navbar-wrapper {
-      position: absolute;
-      margin-right: -250px;
+    position: absolute;
+    margin-right: -190px;
+}
+  
+  #wrapper.toggled #content-wrapper {
+    position: absolute;
+    margin-right: -190px;
   }
-  #navbar-wrapper .navbar {
-    border-width: 0 0 0 0;
-    background-color: #eee;
-    font-size: 24px;
-    margin-bottom: 0;
-    border-radius: 0;
+
+  #navbar-wrapper {
+    position: relative;
   }
-  #navbar-wrapper .navbar a {
-    color: #757575;
+
+  #wrapper.toggled {
+    padding-left: 60px;
   }
-  #navbar-wrapper .navbar a:hover {
-    color: white;
+
+  #content-wrapper {
+    position: relative;
+    top: 0;
+  }
+
+  #wrapper.toggled #navbar-wrapper,
+  #wrapper.toggled #content-wrapper {
+    position: relative;
+    margin-right: 60px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #wrapper {
+    padding-left: 60px;
+  }
+
+  #sidebar-wrapper {
+    width: 60px;
   }
   
-  #content-wrapper {
-    width: 100%;
+#wrapper.toggled #navbar-wrapper {
     position: absolute;
-    padding: 15px;
-    top: 100px;
-  }
+    margin-right: -250px;
+}
+  
   #wrapper.toggled #content-wrapper {
     position: absolute;
     margin-right: -250px;
   }
-  
-  @media (min-width: 992px) {
-    #wrapper {
-      padding-left: 250px;
-    }
-    
-    #wrapper.toggled {
-      padding-left: 60px;
-    }
-  
-    #sidebar-wrapper {
-      width: 250px;
-    }
-    
-    #wrapper.toggled #sidebar-wrapper {
-      width: 60px;
-    }
-    
-    #wrapper.toggled #navbar-wrapper {
-      position: absolute;
-      margin-right: -190px;
+
+  #navbar-wrapper {
+    position: relative;
   }
-    
-    #wrapper.toggled #content-wrapper {
-      position: absolute;
-      margin-right: -190px;
-    }
-  
-    #navbar-wrapper {
-      position: relative;
-    }
-  
-    #wrapper.toggled {
-      padding-left: 60px;
-    }
-  
-    #content-wrapper {
-      position: relative;
-      top: 0;
-    }
-  
-    #wrapper.toggled #navbar-wrapper,
-    #wrapper.toggled #content-wrapper {
-      position: relative;
-      margin-right: 60px;
-    }
+
+  #wrapper.toggled {
+    padding-left: 250px;
   }
-  
-  @media (min-width: 768px) and (max-width: 991px) {
-    #wrapper {
-      padding-left: 60px;
-    }
-  
-    #sidebar-wrapper {
-      width: 60px;
-    }
-    
+
+  #content-wrapper {
+    position: relative;
+    top: 0;
+  }
+
+  #wrapper.toggled #navbar-wrapper,
+  #wrapper.toggled #content-wrapper {
+    position: relative;
+    margin-right: 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  #wrapper {
+    padding-left: 0;
+  }
+
+  #sidebar-wrapper {
+    width: 0;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+  }
   #wrapper.toggled #navbar-wrapper {
-      position: absolute;
-      margin-right: -250px;
-  }
-    
-    #wrapper.toggled #content-wrapper {
-      position: absolute;
-      margin-right: -250px;
-    }
-  
-    #navbar-wrapper {
-      position: relative;
-    }
-  
-    #wrapper.toggled {
-      padding-left: 250px;
-    }
-  
-    #content-wrapper {
-      position: relative;
-      top: 0;
-    }
-  
-    #wrapper.toggled #navbar-wrapper,
-    #wrapper.toggled #content-wrapper {
-      position: relative;
-      margin-right: 250px;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    #wrapper {
-      padding-left: 0;
-    }
-  
-    #sidebar-wrapper {
-      width: 0;
-    }
-  
-    #wrapper.toggled #sidebar-wrapper {
-      width: 250px;
-    }
-    #wrapper.toggled #navbar-wrapper {
-      position: absolute;
-      margin-right: -250px;
-    }
-  
-    #wrapper.toggled #content-wrapper {
-      position: absolute;
-      margin-right: -250px;
-    }
-  
-    #navbar-wrapper {
-      position: relative;
-    }
-  
-    #wrapper.toggled {
-      padding-left: 250px;
-    }
-  
-    #content-wrapper {
-      position: relative;
-      top: 0;
-    }
-  
-    #wrapper.toggled #navbar-wrapper,
-    #wrapper.toggled #content-wrapper {
-      position: relative;
-      margin-right: 250px;
-    }
+    position: absolute;
+    margin-right: -250px;
   }
 
-  #special-offer-header h2,
-#another-special-offer-header h2 {
-  text-align: center;
-  color: black;
-  padding: 10px;
-  transition: all 300ms ease;
-  cursor: pointer;
-}
+  #wrapper.toggled #content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+  }
 
-.container-img{
-  width: 100%;
-  height: 25rem;
-  overflow: hidden;
-}
+  #navbar-wrapper {
+    position: relative;
+  }
 
-.card-img-top{
-  width: 100%;
-  transition: all 300ms ease-in-out;
-}
+  #wrapper.toggled {
+    padding-left: 250px;
+  }
 
-.container-img:hover img{
-  transform: scale(1.1);
-}
+  #content-wrapper {
+    position: relative;
+    top: 0;
+  }
 
-
-#special-offer-header:hover h2{
-  color: #F8BE12;
+  #wrapper.toggled #navbar-wrapper,
+  #wrapper.toggled #content-wrapper {
+    position: relative;
+    margin-right: 250px;
+  }
 }
 
 .container-registrar{
