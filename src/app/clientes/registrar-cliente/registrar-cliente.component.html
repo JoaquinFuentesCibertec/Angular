@@ -1,0 +1,74 @@
+<div id="body-container" class="bodyI">
+  <div id="wrapper">
+    <aside id="sidebar-wrapper">
+      <div id="sidebar-brand" class="sidebar-brand">
+        <h2>Librerias Eclipse</h2>
+      </div>
+      <ul id="sidebar-nav" class="sidebar-nav">
+        <li id="nav-inicio">
+          <a href="*"><i class="fa fa-home"></i>Inicio</a>
+        </li>
+        <li id="nav-clientes">
+          <a href="/listar-clientes"><i class="fa fa-user"></i>Clientes</a>
+        </li>
+        <li id="nav-nuevo-cliente">
+          <a href="/registrar-cliente"><i class="fa fa-address-book"></i>Nuevo Cliente</a>
+        </li>
+        <li id="nav-libros">
+          <a href="/listar-libros"><i class="fa fa-book"></i>Libros</a>
+        </li>
+        <li id="nav-nuevo-libro">
+          <a href="/registrar-libro"><i class="fa fa-bookmark"></i>Nuevo Libro</a>
+        </li>
+        <li id="nav-sucursales">
+          <a href="/listar-sucursales"><i class="fa fa-building"></i>Sucursales</a>
+        </li>
+        <li id="nav-nueva-sucursal">
+          <a href="/registrar-sucursal"><i class="fa fa-plus"></i>Nueva Sucursal</a>
+        </li>
+        <li id="nav-reservas">
+          <a href="/listar-reserva"><i class="fa fa-address-card"></i>Reservas</a>
+        </li>
+        <li id="nav-editoriales">
+          <a href="/listar-editorial"><i class="fa fa-file-text"></i>Editoriales</a>
+        </li>
+        <li id="nav-mantenimientos">
+          <a href="/listar-mantenimiento"><i class="fa fa-plug"></i>Mantenimientos</a>
+        </li>
+        <li id="nav-contactenos">
+          <a href="/contactos"><i class="fa fa-map"></i>Contactenos</a>
+        </li>
+      </ul>
+    </aside>
+    <div id="form-container" class="form-container">
+      <h2 id="form-title">Registrar Cliente</h2>
+      <form id="form-registrar-cliente" (ngSubmit)="registrar()">
+        <div id="form-nombre">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" [(ngModel)]="cliente.nombre" name="nombre" required>
+        </div>
+        <div id="form-apellido-paterno">
+          <label for="apellidoPaterno">Apellido Paterno:</label>
+          <input type="text" id="apellidoPaterno" [(ngModel)]="cliente.apellidoPaterno" name="apellidoPaterno" required>
+        </div>
+        <div id="form-apellido-materno">
+          <label for="apellidoMaterno">Apellido Materno:</label>
+          <input type="text" id="apellidoMaterno" [(ngModel)]="cliente.apellidoMaterno" name="apellidoMaterno">
+        </div>
+        <div id="form-direccion">
+          <label for="direccion">Dirección:</label>
+          <input type="text" id="direccion" [(ngModel)]="cliente.direccion" name="direccion" required>
+        </div>
+        <div id="form-correo">
+          <label for="correo">Correo:</label>
+          <input type="email" id="correo" [(ngModel)]="cliente.correo" name="correo" required>
+        </div>
+        <div id="form-fecha-ingreso">
+          <label for="fechaIngreso">Fecha de Ingreso:</label>
+          <input type="date" id="fechaIngreso" [(ngModel)]="cliente.fechaIngreso" name="fechaIngreso" required>
+        </div>
+        <button id="form-submit" type="submit">Registrar</button>
+      </form>
+    </div>
+  </div>
+</div>

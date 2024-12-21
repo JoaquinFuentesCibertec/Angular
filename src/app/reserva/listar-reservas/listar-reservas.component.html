@@ -1,0 +1,82 @@
+<div class = "bodyI">
+    <div id="wrapper">
+      <aside id="sidebar-wrapper">
+        <div class="sidebar-brand">
+          <h2>Librerias Eclipse</h2>
+        </div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="*"><i class="fa fa-home"></i>Inicio</a>
+          </li>
+          <li>
+            <a href="/listar-clientes"><i class="fa fa-user"></i>Clientes</a>
+          </li>
+          <li>
+            <a href="/registrar-cliente"><i class="fa fa-address-book"></i>Nuevo Cliente</a>
+          </li>
+          <li>
+            <a href="/listar-libros"><i class="fa fa-book"></i>Libros</a>
+          </li>
+          <li>
+            <a href="/registrar-libro"><i class="fa fa-bookmark"></i>Nuevo Libro</a>
+          </li>
+          <li>
+            <a href="/listar-sucursales"><i class="fa fa-building"></i>Sucursales</a>
+          </li>
+          <li>
+            <a href="/registrar-sucursal"><i class="fa fa-plus"></i>Nueva Sucursal</a>
+          </li>
+          <li>
+            <a href="/listar-reserva"><i class="fa fa-address-card"></i>Reservas</a>
+          </li>
+          <li>
+            <a href="/listar-editorial"><i class="fa fa-file-text"></i>Editoriales</a>
+          </li>
+          <li>
+            <a href="/listar-mantenimiento"><i class="fa fa-plug"></i>Mantenimientos</a>
+          </li>
+          <li>
+            <a href="/contactos"><i class="fa fa-map"></i>Contactenos</a>
+          </li>
+          <li>
+            <div>
+              <button (click)="descargarReporteReservas()">Descargar Reporte de Reservas</button>
+            </div>
+          </li>
+        </ul>
+      </aside>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ID Cliente</th>
+      <th>Libro Reservado</th>
+      <th>Fecha Reserva</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reserva of reservas">
+      <td>{{ reserva.id }}</td>
+      <td>{{ reserva.idCliente }}</td>
+      <td>{{ reserva.libroReservado }}</td>
+      <td>{{ reserva.fechaReserva | date:'shortDate' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Registrar Reserva</h2>
+<form (ngSubmit)="agregarReserva()">
+  <div>
+    <label for="idCliente">ID Cliente:</label>
+    <input type="number" id="idCliente" [(ngModel)]="nuevaReserva.idCliente" name="idCliente" required>
+  </div>
+  <div>
+    <label for="libroReservado">Libro Reservado:</label>
+    <input type="text" id="libroReservado" [(ngModel)]="nuevaReserva.libroReservado" name="libroReservado" required>
+  </div>
+  <div>
+    <label for="fechaReserva">Fecha Reserva:</label>
+    <input type="date" id="fechaReserva" [(ngModel)]="nuevaReserva.fechaReserva" name="fechaReserva" required>
+  </div>
+  <button type="submit">Registrar Reserva</button>
+</form>

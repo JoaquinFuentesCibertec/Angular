@@ -1,0 +1,71 @@
+<head></head>
+<div class="bodyI">
+  <div id="wrapper">
+    <aside id="sidebar-wrapper">
+      <div id="sidebar-brand" class="sidebar-brand">
+        <h2>Librerias Eclipse</h2>
+      </div>
+      <ul id="sidebar-nav" class="sidebar-nav">
+        <li id="nav-home">
+          <a href="*"><i class="fa fa-home"></i>Inicio</a>
+        </li>
+        <li id="nav-clientes">
+          <a href="/listar-clientes"><i class="fa fa-user"></i>Clientes</a>
+        </li>
+        <li id="nav-nuevo-cliente">
+          <a href="/registrar-cliente"><i class="fa fa-address-book"></i>Nuevo Cliente</a>
+        </li>
+        <li id="nav-libros">
+          <a href="/listar-libros"><i class="fa fa-book"></i>Libros</a>
+        </li>
+        <li id="nav-nuevo-libro">
+          <a href="/registrar-libro"><i class="fa fa-bookmark"></i>Nuevo Libro</a>
+        </li>
+        <li id="nav-sucursales">
+          <a href="/listar-sucursales"><i class="fa fa-building"></i>Sucursales</a>
+        </li>
+        <li id="nav-nueva-sucursal">
+          <a href="/registrar-sucursal"><i class="fa fa-plus"></i>Nueva Sucursal</a>
+        </li>
+        <li id="nav-reservas">
+          <a href="/listar-reserva"><i class="fa fa-address-card"></i>Reservas</a>
+        </li>
+        <li id="nav-editoriales">
+          <a href="/listar-editorial"><i class="fa fa-file-text"></i>Editoriales</a>
+        </li>
+        <li id="nav-mantenimientos">
+          <a href="/listar-mantenimiento"><i class="fa fa-plug"></i>Mantenimientos</a>
+        </li>
+        <li id="nav-contactos">
+          <a href="/contactos"><i class="fa fa-map"></i>Contactenos</a>
+        </li>
+      </ul>
+    </aside>
+
+    <div id="form-container" class="form-container">
+      <form id="form-libro" (ngSubmit)="actualizarLibro()">
+        <div id="form-nombre-libro">
+          <label for="nombre_libro">Nombre del Libro:</label>
+          <input type="text" id="nombre_libro" [(ngModel)]="libro.nombre" name="nombre_libro" required>
+        </div>
+        <div id="form-autor">
+          <label for="autor">Autor:</label>
+          <input type="text" id="autor" [(ngModel)]="libro.autor" name="autor" required>
+        </div>
+        <div id="form-pais">
+          <label for="pais">País:</label>
+          <input type="text" id="pais" [(ngModel)]="libro.pais" name="pais" required>
+        </div>
+        <div id="form-stock">
+          <label for="stock">Stock:</label>
+          <input type="number" id="stock" [(ngModel)]="libro.stock" name="stock" required>
+        </div>
+        <div id="form-fecha-restock">
+          <label for="fecha_restock">Fecha de Restock:</label>
+          <input type="date" id="fecha_restock" [(ngModel)]="libro.fechaRestock" name="fecha_restock" required>
+        </div>
+        <button type="submit" id="submit-button">Actualizar</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,3 @@
-body{
-    background-size: cover;
-  }
-  
   #sidebar-wrapper {
     width: 250px;
     background-color: #333;
@@ -43,36 +39,3 @@ body{
   #nav-home a {
     font-weight: bold;
   }
-  #special-offer-header h2,
-#another-special-offer-header h2 {
-  text-align: center;
-  color: black;
-  padding: 10px;
-  transition: all 300ms ease;
-  cursor: pointer;
-  background-color: white;
-}
-
-.container-img{
-  width: 100%;
-  height: 25rem;
-  overflow: hidden;
-}
-
-.card-img-top{
-  width: 100%;
-  transition: all 300ms ease-in-out;
-}
-
-.container-img:hover img{
-  transform: scale(1.1);
-}
-
-
-#special-offer-header:hover h2{
-  color: #F8BE12;
-}
-  html, body { height: 100%; }
-  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-  
-  

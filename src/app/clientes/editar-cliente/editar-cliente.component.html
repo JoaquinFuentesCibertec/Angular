@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Cliente</title>
+    <link rel="stylesheet" href="./editar-cliente.component.css">
+</head>
+<body class="bodyI">
+    <div id="wrapper">
+        <aside id="sidebar-wrapper">
+            <div id="sidebar-brand" class="sidebar-brand">
+                <h2>Librerias Eclipse</h2>
+            </div>
+            <ul id="sidebar-nav" class="sidebar-nav">
+                <li id="nav-home">
+                    <a href="*"><i class="fa fa-home"></i>Inicio</a>
+                </li>
+                <li id="nav-clientes">
+                    <a href="/listar-clientes"><i class="fa fa-user"></i>Clientes</a>
+                </li>
+                <li id="nav-nuevo-cliente">
+                    <a href="/registrar-cliente"><i class="fa fa-address-book"></i>Nuevo Cliente</a>
+                </li>
+                <li id="nav-libros">
+                    <a href="/listar-libros"><i class="fa fa-book"></i>Libros</a>
+                </li>
+                <li id="nav-nuevo-libro">
+                    <a href="/registrar-libro"><i class="fa fa-bookmark"></i>Nuevo Libro</a>
+                </li>
+                <li id="nav-sucursales">
+                    <a href="/listar-sucursales"><i class="fa fa-building"></i>Sucursales</a>
+                </li>
+                <li id="nav-nueva-sucursal">
+                    <a href="/registrar-sucursal"><i class="fa fa-plus"></i>Nueva Sucursal</a>
+                </li>
+                <li id="nav-reservas">
+                    <a href="/listar-reserva"><i class="fa fa-address-card"></i>Reservas</a>
+                </li>
+                <li id="nav-editoriales">
+                    <a href="/listar-editorial"><i class="fa fa-file-text"></i>Editoriales</a>
+                </li>
+                <li id="nav-mantenimientos">
+                    <a href="/listar-mantenimiento"><i class="fa fa-plug"></i>Mantenimientos</a>
+                </li>
+                <li id="nav-contactos">
+                    <a href="/contactos"><i class="fa fa-map"></i>Contactenos</a>
+                </li>
+            </ul>
+        </aside>
+        <div id="main-content">
+            <section id="form-section" class="form-container">
+                <h1 id="form-title">Actualizar Cliente</h1>
+                <form id="update-client-form" (ngSubmit)="actualizarCliente()">
+                    <div id="form-nombre" class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" [(ngModel)]="cliente.nombre" name="nombre" required>
+                    </div>
+                    <div id="form-apellido-paterno" class="form-group">
+                        <label for="apellidoPaterno">Apellido Paterno:</label>
+                        <input type="text" id="apellidoPaterno" [(ngModel)]="cliente.apellidoPaterno" name="apellidoPaterno" required>
+                    </div>
+                    <div id="form-apellido-materno" class="form-group">
+                        <label for="apellidoMaterno">Apellido Materno:</label>
+                        <input type="text" id="apellidoMaterno" [(ngModel)]="cliente.apellidoMaterno" name="apellidoMaterno">
+                    </div>
+                    <div id="form-direccion" class="form-group">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" id="direccion" [(ngModel)]="cliente.direccion" name="direccion" required>
+                    </div>
+                    <div id="form-correo" class="form-group">
+                        <label for="correo">Correo:</label>
+                        <input type="email" id="correo" [(ngModel)]="cliente.correo" name="correo" required>
+                    </div>
+                    <div id="form-fecha-ingreso" class="form-group">
+                        <label for="fechaIngreso">Fecha de Ingreso:</label>
+                        <input type="date" id="fechaIngreso" [(ngModel)]="cliente.fechaIngreso" name="fechaIngreso" required>
+                    </div>
+                    <div id="form-submit" class="form-group">
+                        <button type="submit">Actualizar</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

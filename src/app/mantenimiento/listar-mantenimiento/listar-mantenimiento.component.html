@@ -1,0 +1,91 @@
+<div class="bodyI">
+  <div id="wrapper">
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand" id="sidebar-brand">
+        <h2>Librerias Eclipse</h2>
+      </div>
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li id="inicio-nav">
+          <a href="*" id="inicio-link"><i class="fa fa-home" id="inicio-icon"></i>Inicio</a>
+        </li>
+        <li id="clientes-nav">
+          <a href="/listar-clientes" id="clientes-link"><i class="fa fa-user" id="clientes-icon"></i>Clientes</a>
+        </li>
+        <li id="nuevo-cliente-nav">
+          <a href="/registrar-cliente" id="nuevo-cliente-link"><i class="fa fa-address-book" id="nuevo-cliente-icon"></i>Nuevo Cliente</a>
+        </li>
+        <li id="libros-nav">
+          <a href="/listar-libros" id="libros-link"><i class="fa fa-book" id="libros-icon"></i>Libros</a>
+        </li>
+        <li id="nuevo-libro-nav">
+          <a href="/registrar-libro" id="nuevo-libro-link"><i class="fa fa-bookmark" id="nuevo-libro-icon"></i>Nuevo Libro</a>
+        </li>
+        <li id="sucursales-nav">
+          <a href="/listar-sucursales" id="sucursales-link"><i class="fa fa-building" id="sucursales-icon"></i>Sucursales</a>
+        </li>
+        <li id="nueva-sucursal-nav">
+          <a href="/registrar-sucursal" id="nueva-sucursal-link"><i class="fa fa-plus" id="nueva-sucursal-icon"></i>Nueva Sucursal</a>
+        </li>
+        <li id="reservas-nav">
+          <a href="/listar-reserva" id="reservas-link"><i class="fa fa-address-card" id="reservas-icon"></i>Reservas</a>
+        </li>
+        <li id="editoriales-nav">
+          <a href="/listar-editorial" id="editoriales-link"><i class="fa fa-file-text" id="editoriales-icon"></i>Editoriales</a>
+        </li>
+        <li id="mantenimiento-nav">
+          <a href="/listar-mantenimiento" id="mantenimiento-link"><i class="fa fa-plug" id="mantenimiento-icon"></i>Mantenimientos</a>
+        </li>
+        <li id="contactos-nav">
+          <a href="/contactos" id="contactos-link"><i class="fa fa-map" id="contactos-icon"></i>Contactenos</a>
+        </li>
+        <li id="descargar-reporte-nav">
+          <div id="descargar-reporte-container">
+            <button (click)="descargarReporteMantenimientos()" id="descargar-reporte-mantenimientos">Descargar Reporte de Mantenimientos</button>
+          </div>
+        </li>
+      </ul>
+    </aside>
+
+    <table id="mantenimientos-table">
+      <thead>
+        <tr>
+          <th id="id-header">ID</th>
+          <th id="fecha-inicio-header">Fecha Inicio</th>
+          <th id="fecha-fin-header">Fecha Fin</th>
+          <th id="razon-header">Razón</th>
+          <th id="id-sucursal-header">ID Sucursal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mantenimiento of mantenimientos" id="mantenimiento-row">
+          <td id="id-cell">{{ mantenimiento.id }}</td>
+          <td id="fechaInicio-cell">{{ mantenimiento.fechaInicio | date:'shortDate' }}</td>
+          <td id="fechaFin-cell">{{ mantenimiento.fechaFin | date:'shortDate' }}</td>
+          <td id="razon-cell">{{ mantenimiento.razon }}</td>
+          <td id="idSucursal-cell">{{ mantenimiento.idSucursal }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="registro-mantenimiento-title">Registrar Mantenimiento</h2>
+    <form (ngSubmit)="agregarMantenimiento()" id="mantenimiento-form">
+      <div id="fechaInicio-container">
+        <label for="fechaInicio" id="fechaInicio-label">Fecha Inicio:</label>
+        <input type="date" id="fechaInicio" [(ngModel)]="nuevaMantenimiento.fechaInicio" name="fechaInicio" required>
+      </div>
+      <div id="fechaFin-container">
+        <label for="fechaFin" id="fechaFin-label">Fecha Fin:</label>
+        <input type="date" id="fechaFin" [(ngModel)]="nuevaMantenimiento.fechaFin" name="fechaFin" required>
+      </div>
+      <div id="razon-container">
+        <label for="razon" id="razon-label">Razón:</label>
+        <input type="text" id="razon" [(ngModel)]="nuevaMantenimiento.razon" name="razon" required>
+      </div>
+      <div id="idSucursal-container">
+        <label for="idSucursal" id="idSucursal-label">ID Sucursal:</label>
+        <input type="number" id="idSucursal" [(ngModel)]="nuevaMantenimiento.idSucursal" name="idSucursal" required>
+      </div>
+      <button type="submit" id="submit-mantenimiento">Registrar Mantenimiento</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+<div class="bodyI">
+  <div id="wrapper">
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand" id="sidebar-brand">
+        <h2>Librerias Eclipse</h2>
+      </div>
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li>
+          <a href="*" id="inicio-link"><i class="fa fa-home"></i>Inicio</a>
+        </li>
+        <li>
+          <a href="/listar-clientes" id="clientes-link"><i class="fa fa-user"></i>Clientes</a>
+        </li>
+        <li>
+          <a href="/registrar-cliente" id="nuevo-cliente-link"><i class="fa fa-address-book"></i>Nuevo Cliente</a>
+        </li>
+        <li>
+          <a href="/listar-libros" id="libros-link"><i class="fa fa-book"></i>Libros</a>
+        </li>
+        <li>
+          <a href="/registrar-libro" id="nuevo-libro-link"><i class="fa fa-bookmark"></i>Nuevo Libro</a>
+        </li>
+        <li>
+          <a href="/listar-sucursales" id="sucursales-link"><i class="fa fa-building"></i>Sucursales</a>
+        </li>
+        <li>
+          <a href="/registrar-sucursal" id="nueva-sucursal-link"><i class="fa fa-plus"></i>Nueva Sucursal</a>
+        </li>
+        <li>
+          <a href="/listar-reserva" id="reservas-link"><i class="fa fa-address-card"></i>Reservas</a>
+        </li>
+        <li>
+          <a href="/listar-editorial" id="editoriales-link"><i class="fa fa-file-text"></i>Editoriales</a>
+        </li>
+        <li>
+          <a href="/listar-mantenimiento" id="mantenimiento-link"><i class="fa fa-plug"></i>Mantenimientos</a>
+        </li>
+        <li>
+          <a href="/contactos" id="contactos-link"><i class="fa fa-map"></i>Contactenos</a>
+        </li>
+        <li>
+          <div id="descargar-reporte-container">
+            <button (click)="descargarReporteLibros()" id="descargar-reporte-libros">Descargar Reporte de Libros</button>
+          </div>
+        </li>
+      </ul>
+    </aside>
+
+    <table id="libros-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Autor</th>
+          <th>País</th>
+          <th>Stock</th>
+          <th>Fecha de Restock</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let libro of libros" [id]="'libro-row-' + libro.id">
+          <td>{{ libro.id }}</td>
+          <td>{{ libro.nombre }}</td>
+          <td>{{ libro.autor }}</td>
+          <td>{{ libro.pais }}</td>
+          <td>{{ libro.stock }}</td>
+          <td>{{ libro.fechaRestock}}</td>
+          <td>
+            <button (click)="editarLibro(libro.id)" id="editar-libro-{{libro.id}}">Editar</button>
+            <button (click)="eliminarLibro(libro.id)" id="eliminar-libro-{{libro.id}}">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="container" id="libro-editoriales-container">
+      <table id="libro-editoriales-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let libro of libros" [id]="'libro-row-editorial-' + libro.id">
+            <td>{{ libro.id }}</td>
+            <td>{{ libro.nombre }}</td>
+            <td>
+              <button (click)="obtenerLibroEditoriales(libro.id)" id="ver-editoriales-{{libro.id}}">Ver Editoriales</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="libroConEditoriales" id="libro-con-editoriales">
+        <table id="editoriales-libro-table">
+          <thead>
+            <tr>
+              <th>ID Reserva</th>
+              <th>Libro Reservado</th>
+              <th>Direccion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let editorial of libroConEditoriales.editoriales" [id]="'editorial-row-' + editorial.id">
+              <td>{{ editorial.id }}</td>
+              <td>{{ editorial.nombre }}</td>
+              <td>{{ editorial.direccion}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

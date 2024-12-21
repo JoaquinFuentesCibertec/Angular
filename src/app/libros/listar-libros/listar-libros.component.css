@@ -1,0 +1,189 @@
+body {
+  background-size: cover;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #dddddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+button {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #c9302c;
+}
+
+a {
+  margin-left: 5px;
+  color: #5bc0de;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebar-wrapper {
+  width: 250px;
+  background-color: #343a40;
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+}
+
+#sidebar-brand {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #23272b;
+}
+
+#sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar-nav li {
+  margin: 0;
+  padding: 10px 20px;
+}
+
+#sidebar-nav li a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 4px;
+}
+
+#sidebar-nav li a:hover {
+  background-color: #495057;
+  border-radius: 5px;
+}
+
+#sidebar-nav li a i {
+  margin-right: 10px;
+}
+
+#descargar-reporte-container {
+  margin: 20px 0;
+}
+
+#descargar-reporte-libros {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 20px;
+}
+
+#descargar-reporte-libros:hover {
+  background-color: #0056b3;
+}
+
+#libros-table {
+  margin: 20px auto;
+  width: 90%;
+}
+
+#libro-editoriales-container {
+  margin-top: 30px;
+}
+
+#libro-editoriales-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+#libro-editoriales-table th, td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+#libro-editoriales-table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+#libro-editoriales-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+#libro-editoriales-table .btn-editar {
+  background-color: blue;
+  color: white;
+}
+
+#libro-editoriales-table .btn-eliminar {
+  background-color: red;
+  color: white;
+}
+
+#libro-con-editoriales {
+  margin-top: 20px;
+}
+
+#editoriales-libro-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+#editoriales-libro-table th, td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+#editoriales-libro-table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+#editoriales-libro-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+#editoriales-libro-table .btn-editar {
+  background-color: blue;
+  color: white;
+}
+
+#editoriales-libro-table .btn-eliminar {
+  background-color: red;
+  color: white;
+}

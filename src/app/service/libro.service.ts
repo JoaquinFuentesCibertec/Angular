@@ -1,34 +1,42 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Libros } from '../models/libros';
-import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
+import { Libro } from '../models/libro';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LibroService {
+  private apiUrl = 'http://localhost:8080/api/libros';
 
-  libroURL = 'http://localhost:8080/libros'
-  constructor(private HttpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  public lista(): Observable<Libros[]>{
-    return this.HttpClient.get<Libros[]>(this.libroURL);
+  listarLibros(): Observable<Libro[]> {
+    return this.http.get<Libro[]>(this.apiUrl);
   }
 
-  public GetId(codLib: number): Observable<any>{
-    return this.HttpClient.get(this.libroURL + "/libro/" + codLib)
-  } 
-
-  public eliminar(productId: number): Observable<any> {
-    return this.HttpClient.delete(this.libroURL + "/cod/" + productId);
-  } 
-
-  public guardar(libro:any): Observable<any> {
-    return this.HttpClient.post(this.libroURL + "/nuevoLib", libro);
+  obtenerLibroPorId(id: number): Observable<Libro> {
+    return this.http.get<Libro>(`${this.apiUrl}/${id}`);
   }
 
-  public actualizar(libro: number,libroAct:any): Observable<any>{
-    return this.HttpClient.put(this.libroURL + "/actualizar/" + libro, libroAct);
+  registrarLibro(libro: Libro): Observable<Libro> {
+    return this.http.post<Libro>(this.apiUrl, libro);
+  }
+
+  actualizarLibro(libro: Libro): Observable<Libro> {
+    return this.http.put<Libro>(`${this.apiUrl}/${libro.id}`, libro);
+}
+
+  eliminarLibro(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  obtenerLibroConEditoriales(id: number): Observable<Libro> {
+    return this.http.get<Libro>(`${this.apiUrl}/libroEditorial/${id}`);
+  }
+
+  descargarReporteLibros(): Observable<Blob> {
+    const url = `${this.apiUrl}/reportes`;
+    return this.http.get(url, { responseType: 'blob' });
   }
 }

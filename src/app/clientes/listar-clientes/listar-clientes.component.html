@@ -1,0 +1,119 @@
+<div class="bodyI">
+  <div id="wrapper">
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand" id="sidebar-brand">
+        <h2 id="sidebar-title">Librerias Eclipse</h2>
+      </div>
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li id="nav-inicio">
+          <a href="*"><i class="fa fa-home"></i>Inicio</a>
+        </li>
+        <li id="nav-clientes">
+          <a href="/listar-clientes"><i class="fa fa-user"></i>Clientes</a>
+        </li>
+        <li id="nav-nuevo-cliente">
+          <a href="/registrar-cliente"><i class="fa fa-address-book"></i>Nuevo Cliente</a>
+        </li>
+        <li id="nav-libros">
+          <a href="/listar-libros"><i class="fa fa-book"></i>Libros</a>
+        </li>
+        <li id="nav-nuevo-libro">
+          <a href="/registrar-libro"><i class="fa fa-bookmark"></i>Nuevo Libro</a>
+        </li>
+        <li id="nav-sucursales">
+          <a href="/listar-sucursales"><i class="fa fa-building"></i>Sucursales</a>
+        </li>
+        <li id="nav-nueva-sucursal">
+          <a href="/registrar-sucursal"><i class="fa fa-plus"></i>Nueva Sucursal</a>
+        </li>
+        <li id="nav-reservas">
+          <a href="/listar-reserva"><i class="fa fa-address-card"></i>Reservas</a>
+        </li>
+        <li id="nav-editoriales">
+          <a href="/listar-editorial"><i class="fa fa-file-text"></i>Editoriales</a>
+        </li>
+        <li id="nav-mantenimientos">
+          <a href="/listar-mantenimiento"><i class="fa fa-plug"></i>Mantenimientos</a>
+        </li>
+        <li id="nav-contactos">
+          <a href="/contactos"><i class="fa fa-map"></i>Contactenos</a>
+        </li>
+        <li id="nav-reporte-clientes">
+          <div>
+            <button id="btn-reporte-clientes" (click)="descargarReporteClientes()">Descargar Reporte de Clientes</button>
+          </div>
+        </li>
+      </ul>
+    </aside>
+
+    <table id="clientes-table">
+      <thead id="clientes-thead">
+        <tr id="clientes-header-row">
+          <th id="clientes-header-id">ID</th>
+          <th id="clientes-header-nombre">Nombre</th>
+          <th id="clientes-header-apellido-paterno">Apellido Paterno</th>
+          <th id="clientes-header-apellido-materno">Apellido Materno</th>
+          <th id="clientes-header-direccion">Dirección</th>
+          <th id="clientes-header-correo">Correo</th>
+          <th id="clientes-header-fecha-ingreso">Fecha de Ingreso</th>
+          <th id="clientes-header-operaciones">Operaciones</th>
+        </tr>
+      </thead>
+      <tbody id="clientes-tbody">
+        <tr id="cliente-row" *ngFor="let cliente of clientes">
+          <td id="cliente-id-{{cliente.id}}">{{ cliente.id }}</td>
+          <td id="cliente-nombre-{{cliente.id}}">{{ cliente.nombre }}</td>
+          <td id="cliente-apellido-paterno-{{cliente.id}}">{{ cliente.apellidoPaterno }}</td>
+          <td id="cliente-apellido-materno-{{cliente.id}}">{{ cliente.apellidoMaterno }}</td>
+          <td id="cliente-direccion-{{cliente.id}}">{{ cliente.direccion }}</td>
+          <td id="cliente-correo-{{cliente.id}}">{{ cliente.correo }}</td>
+          <td id="cliente-fecha-ingreso-{{cliente.id}}">{{ cliente.fechaIngreso | date }}</td>
+          <td id="cliente-operaciones-{{cliente.id}}">
+            <button id="btn-editar-{{cliente.id}}" class="btn btn-editar" (click)="editarCliente(cliente.id)">Editar</button>
+<button id="btn-eliminar-{{cliente.id}}" class="btn btn-eliminar" (click)="eliminarCliente(cliente.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="container" id="reservas-container">
+      <table id="reservas-table">
+        <thead id="reservas-thead">
+          <tr id="reservas-header-row">
+            <th id="reservas-header-id">ID</th>
+            <th id="reservas-header-nombre">Nombre</th>
+            <th id="reservas-header-acciones">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="reservas-tbody">
+          <tr id="reserva-row-{{cliente.id}}" *ngFor="let cliente of clientes">
+            <td id="reserva-id-{{cliente.id}}">{{ cliente.id }}</td>
+            <td id="reserva-nombre-{{cliente.id}}">{{ cliente.nombre }}</td>
+            <td id="reserva-acciones-{{cliente.id}}">
+              <button id="btn-ver-reservas-{{cliente.id}}" (click)="obtenerClienteReservas(cliente.id)">Ver Reservas</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div id="cliente-reservas-container" *ngIf="clienteConReservas">
+        <table id="cliente-reservas-table">
+          <thead id="cliente-reservas-thead">
+            <tr id="cliente-reservas-header-row">
+              <th id="reserva-header-id">ID Reserva</th>
+              <th id="reserva-header-libro">Libro Reservado</th>
+              <th id="reserva-header-fecha">Fecha Reserva</th>
+            </tr>
+          </thead>
+          <tbody id="cliente-reservas-tbody">
+            <tr id="cliente-reservas-row-{{reserva.id}}" *ngFor="let reserva of clienteConReservas.reservas">
+              <td id="reserva-id-detalle-{{reserva.id}}">{{ reserva.id }}</td>
+              <td id="reserva-libro-{{reserva.id}}">{{ reserva.libroReservado }}</td>
+              <td id="reserva-fecha-{{reserva.id}}">{{ reserva.fechaReserva | date:'shortDate' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

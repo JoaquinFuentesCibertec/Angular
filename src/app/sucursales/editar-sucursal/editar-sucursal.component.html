@@ -1,0 +1,63 @@
+<head></head>
+<div class = "bodyI">
+  <div id="wrapper">
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand">
+        <h2>Librerias Eclipse</h2>
+      </div>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="*"><i class="fa fa-home"></i>Inicio</a>
+        </li>
+        <li>
+          <a href="/listar-clientes"><i class="fa fa-user"></i>Clientes</a>
+        </li>
+        <li>
+          <a href="/registrar-cliente"><i class="fa fa-address-book"></i>Nuevo Cliente</a>
+        </li>
+        <li>
+          <a href="/listar-libros"><i class="fa fa-book"></i>Libros</a>
+        </li>
+        <li>
+          <a href="/registrar-libro"><i class="fa fa-bookmark"></i>Nuevo Libro</a>
+        </li>
+        <li>
+          <a href="/listar-sucursales"><i class="fa fa-building"></i>Sucursales</a>
+        </li>
+        <li>
+          <a href="/registrar-sucursal"><i class="fa fa-plus"></i>Nueva Sucursal</a>
+        </li>
+        <li>
+          <a href="/listar-reserva"><i class="fa fa-address-card"></i>Reservas</a>
+        </li>
+        <li>
+          <a href="/listar-editorial"><i class="fa fa-file-text"></i>Editoriales</a>
+        </li>
+        <li>
+          <a href="/listar-mantenimiento"><i class="fa fa-plug"></i>Mantenimientos</a>
+        </li>
+        <li>
+          <a href="/contactos"><i class="fa fa-map"></i>Contactenos</a>
+        </li>
+      </ul>
+    </aside>
+<div class="form-container">
+<form (ngSubmit)="actualizarSucursal()">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" [(ngModel)]="sucursal.nombre" name="nombre" required>
+  </div>
+  <div>
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" [(ngModel)]="sucursal.direccion" name="direccion" required>
+  </div>
+  <div>
+    <label for="tecnico">Técnico:</label>
+    <input type="text" id="tecnico" [(ngModel)]="sucursal.tecnico" name="tecnico" required>
+  </div>
+  <div>
+    <label for="telefono">Teléfono:</label>
+    <input type="number" id="telefono" [(ngModel)]="sucursal.telefono" name="telefono" required>
+  </div>
+  <button type="submit">Actualizar</button>
+</form>

@@ -1,0 +1,94 @@
+<div class = "bodyI">
+    <div id="wrapper">
+      <aside id="sidebar-wrapper">
+        <div class="sidebar-brand">
+          <h2>Librerias Eclipse</h2>
+        </div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="*"><i class="fa fa-home"></i>Inicio</a>
+          </li>
+          <li>
+            <a href="/listar-clientes"><i class="fa fa-user"></i>Clientes</a>
+          </li>
+          <li>
+            <a href="/registrar-cliente"><i class="fa fa-address-book"></i>Nuevo Cliente</a>
+          </li>
+          <li>
+            <a href="/listar-libros"><i class="fa fa-book"></i>Libros</a>
+          </li>
+          <li>
+            <a href="/registrar-libro"><i class="fa fa-bookmark"></i>Nuevo Libro</a>
+          </li>
+          <li>
+            <a href="/listar-sucursales"><i class="fa fa-building"></i>Sucursales</a>
+          </li>
+          <li>
+            <a href="/registrar-sucursal"><i class="fa fa-plus"></i>Nueva Sucursal</a>
+          </li>
+          <li>
+            <a href="/listar-reserva"><i class="fa fa-address-card"></i>Reservas</a>
+          </li>
+          <li>
+            <a href="/listar-editorial"><i class="fa fa-file-text"></i>Editoriales</a>
+          </li>
+          <li>
+            <a href="/listar-mantenimiento"><i class="fa fa-plug"></i>Mantenimientos</a>
+          </li>
+          <li>
+            <a href="/contactos"><i class="fa fa-map"></i>Contactenos</a>
+          </li>
+          <li>
+            <div>
+              <button (click)="descargarReporteEditoriales()">Descargar Reporte de Editoriales</button>
+            </div>
+          </li>
+        </ul>
+      </aside>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Dirección</th>
+      <th>Teléfono</th>
+      <th>Email</th>
+      <th>IdLibro</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let editorial of editoriales">
+      <td>{{ editorial.id }}</td>
+      <td>{{ editorial.nombre }}</td>
+      <td>{{ editorial.direccion }}</td>
+      <td>{{ editorial.telefono }}</td>
+      <td>{{ editorial.email }}</td>
+      <td>{{ editorial.idLibro }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Registrar Editorial</h2>
+<form (ngSubmit)="agregarEditorial()">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" [(ngModel)]="nuevaEditorial.nombre" name="nombre" required>
+  </div>
+  <div>
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" [(ngModel)]="nuevaEditorial.direccion" name="direccion" required>
+  </div>
+  <div>
+    <label for="telefono">Teléfono:</label>
+    <input type="number" id="telefono" [(ngModel)]="nuevaEditorial.telefono" name="telefono" required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="nuevaEditorial.email" name="email" required>
+  </div>
+  <div>
+    <label for="libro">idLibro:</label>
+    <input type="number" id="libro" [(ngModel)]="nuevaEditorial.idLibro" name="libro" required>
+  </div>
+  <button type="submit">Registrar Editorial</button>
+</form>
